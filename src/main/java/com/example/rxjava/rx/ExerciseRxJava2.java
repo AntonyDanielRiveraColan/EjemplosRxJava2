@@ -5,10 +5,13 @@ import io.reactivex.Observable;
 
 public class ExerciseRxJava2 {
 
+  /**
+   * Metodo principal llama a los otros metodos.
+   */
   public static void main(String[] args) {
     // ejemplo1();
     // ejemplo2();
-    loadNumbers().map(x ->"[" + String.valueOf(x)+"] ").subscribe(System.out::print);
+    loadNumbers().map(x -> "[" + String.valueOf(x) + "] ").subscribe(System.out::print);
 
   }
 
@@ -39,7 +42,7 @@ public class ExerciseRxJava2 {
         {10, -8, 17, -6, -5, 34, -3, -2, 21, 0}};
 
     Observable.fromArray(matrix).flatMap(line -> Observable.fromArray(line))
-        .map(elemnt -> "["+String.valueOf(elemnt)+"] ")
+        .map(elemnt -> "[" + String.valueOf(elemnt) + "] ")
         .subscribe(System.out::print);
 
   }
